@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and filter internship opportunities by role, company, and domain.">
+  <title>Internship Board | CareerLaunch</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to internship listings</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="CareerLaunch home"><span class="brand-mark">C</span> CareerLaunch</a>
+      <span class="header-note">Find your next opportunity</span>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR CAREER STARTS HERE</p>
+      <h1 id="page-title">Find an internship<br><span>that moves you forward.</span></h1>
+      <p class="hero-copy">Explore beginner-friendly opportunities, discover new fields, and take the next step in your career.</p>
+      <div class="hero-stats" aria-label="Board highlights">
+        <div><strong id="total-count">0</strong><span>Opportunities</span></div>
+        <div><strong>6</strong><span>Career domains</span></div>
+        <div><strong>100%</strong><span>Student focused</span></div>
+      </div>
+    </section>
+
+    <section class="listing-section" aria-labelledby="listing-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">EXPLORE ROLES</p><h2 id="listing-title">Internship opportunities</h2></div>
+        <p class="results-label" id="results-count" aria-live="polite">Loading opportunities…</p>
+      </div>
+
+      <form id="filters-form" class="filters" role="search">
+        <div class="field search-field">
+          <label for="search-input">Search internships</label>
+          <input id="search-input" name="search" type="search" placeholder="Try Python, design, marketing…" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="domain-filter">Career domain</label>
+          <select id="domain-filter" name="domain">
+            <option value="all">All domains</option>
+          </select>
+        </div>
+        <button class="reset-button" type="reset">Clear filters</button>
+      </form>
+
+      <p id="error-message" class="message error-message" role="alert" hidden>
+        We couldn't load the internship list. Please refresh the page or try again later.
+      </p>
+      <div id="internship-list" class="internship-grid" aria-live="polite" aria-busy="true"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-icon" aria-hidden="true">⌕</div>
+        <h3>No internships found</h3>
+        <p>Try a different keyword or choose another domain.</p>
+        <button id="empty-reset" class="primary-button" type="button">Show all internships</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#"><span class="brand-mark">C</span> CareerLaunch</a>
+      <p>Made for learners taking their first career step.</p>
+      <span>© <span id="year"></span> CareerLaunch</span>
+    </div>
+  </footer>
+</body>
+</html>
